@@ -1,4 +1,4 @@
-ame: Automated Unit Testing
+Name: Automated Unit Testing
 on: 
   pull_request:
   workflow_dispatch:
