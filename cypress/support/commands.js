@@ -48,6 +48,12 @@ Cypress.Commands.add("loginWithTestUser", () => {
   });
 });
 
+Cypress.Commands.add("loginWithInvalidUser", () => {
+  cy.fixture("example").then((user) => {
+    cy.login(user.invalidEmail, user.invalidPassword);
+  });
+});
+
 Cypress.Commands.add("logout", () => {
   cy.get("button[data-auth=logout]").click();
   cy.wait(500);
@@ -59,6 +65,8 @@ Cypress.Commands.add("isLoggedIn", () => {
   });
 });
 
-// Cypress.Commands.add("isLoggedOut", () => {
-//   cy.
-// })
+Cypress.Commands.add("isLoggedOut", () => {
+  cy.window().then((win) => {
+    expect(win.localStorage.getItem("token")).to.be.null;
+  });
+});
