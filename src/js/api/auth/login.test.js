@@ -1,4 +1,4 @@
-import { login } from "./login"; 
+import { login } from "./login"; // Adjust the import path as needed
 
 describe("able to login and store the token", () => {
   const localStorageMock = (function () {
@@ -18,6 +18,7 @@ describe("able to login and store the token", () => {
     };
   })();
 
+  // Fetch
   global.fetch = jest.fn(() =>
     Promise.resolve({
       ok: true,
@@ -35,6 +36,7 @@ describe("able to login and store the token", () => {
     const password = "JeWeetHetToch";
     await login(email, password);
 
+    // Assert the token as a JSON string
     expect(localStorage.getItem("token")).toEqual(
       JSON.stringify("accountToken"),
     );
