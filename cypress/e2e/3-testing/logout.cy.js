@@ -21,5 +21,7 @@ describe("User should be able to log in with the correct credentials", () => {
     cy.logout();
 
     cy.isLoggedOut();
+
+    cy.log("logged out");
   });
 });

@@ -1,4 +1,4 @@
-import { logout } from "./logout"; // Adjust the import path as needed
+import { logout } from "./logout"; 
 
 describe("logout", () => {
   const localStorageMock = (function () {
